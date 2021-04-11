@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Pricing component with Toggle</title>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <h1 class="header__title">Our Pricing</h1>
+        <div class="header__toggle">
+          <p class="header__toggle--option active">Annually</p>
+          <label for="toggle" class="header__switch">
+            <input type="checkbox" id="toggle" class="header__switch--checkbox">
+            <div class="toggle__button"></div>
+          </label>
+          <p class="header__toggle--option">Monthly</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- Basic -->
+        <div class="card__item">
+          <h2 class="card__title">Basic</h2>
+
+          <div class="card__price">
+            <span>&dollar;</span>
+            <p class="card__price--amount">199.99</p>
+            <p class="card__price--amount hidden">19.99</p>
+          </div>
+
+          <ul class="card__details">
+            <li class="card__details--item">500 GB Storage</li>
+            <li class="card__details--item">2 User Allowed</li>
+            <li class="card__details--item">Send up to 3GB</li>
+          </ul>
+
+          <button class="btn card__button">Learn More</button>
+        </div>
+
+        <!-- Professional -->
+        <div class="card__item">
+          <h2 class="card__title">Professional</h2>
+
+          <div class="card__price">
+            <span>&dollar;</span>
+            <p class="card__price--amount">249.99</p>
+            <p class="card__price--amount hidden">24.99</p>
+          </div>
+
+          <ul class="card__details">
+            <li class="card__details--item">1 TB Storage</li>
+            <li class="card__details--item">5 Users Allowed</li>
+            <li class="card__details--item">Send up to 10 GB</li>
+          </ul>
+
+          <button class="btn card__button">Learn More</button>
+        </div>
+
+        <!-- Master -->
+        <div class="card__item">
+          <h2 class="card__title">Master</h2>
+
+          <div class="card__price">
+            <span>&dollar;</span>
+            <p class="card__price--amount">399.99</p>
+            <p class="card__price--amount hidden">39.99</p>
+          </div>
+
+          <ul class="card__details">
+            <li class="card__details--item">2 TB Storage</li>
+            <li class="card__details--item">10 Users Allowed</li>
+            <li class="card__details--item">Send up to 20 GB</li>
+          </ul>
+
+          <button class="btn card__button">Learn More</button>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('input[type="checkbox"]').click(function(){
+          $('.card__price--amount').toggleClass('hidden');
+          $('.header__toggle--option').toggleClass('active');
+        });
+      });
+    </script>
+  </body>
+</html>
